@@ -16,6 +16,7 @@ dependencies = [
     "icecream>=2.2.0",
     "drf-spectacular>=0.30.0",
     "drf-spectacular-sidecar>=2026.9.1",
+    "psycopg2-binary>=2.9.13",
 ]
 
 [dependency-groups]
