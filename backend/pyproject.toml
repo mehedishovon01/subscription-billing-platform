@@ -1,0 +1,35 @@
+[project]
+name = "isp-billing-backend"
+version = "0.1.0"
+description = "ISP subscription billing and onboarding API"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "django>=6.1.1",
+    "djangorestframework",
+    "djangorestframework-simplejwt",
+    "django-filter",
+    "django-cors-headers",
+    "psycopg[binary]",
+    "gunicorn",
+    "whitenoise>=6.9,<7",
+    "icecream>=2.2.0",
+    "drf-spectacular>=0.30.0",
+    "drf-spectacular-sidecar>=2026.9.1",
+]
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "pytest-django",
+]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "config.settings"
+pythonpath = ["."]
+python_files = ["test_*.py"]
+testpaths = ["accounts/tests", "billing/tests"]
+addopts = "-ra"
